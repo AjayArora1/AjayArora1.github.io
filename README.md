@@ -25,7 +25,7 @@ This is one of my first programming projects. I created this in 2018 in using Vi
 
 ![image](https://user-images.githubusercontent.com/83846945/120902248-7036c480-c5fc-11eb-9e28-6cb7ce4546e9.png)
 
-'
+
 
     Public Class frmBrowser
         'declarations
@@ -65,4 +65,4 @@ This is one of my first programming projects. I created this in 2018 in using Vi
         End Sub
     End Class
 
-'
+
