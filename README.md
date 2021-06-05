@@ -385,3 +385,15 @@ This is one of my first programming projects. I created this in 2018 in using Vi
     End Class
 
 
+
+### HTML, CSS, JavaScript, JQuery (Web Development Work)
+
+In 2021 I was hired by a company to redesign their website. I will not be sharing the source code for it, but I do have permission from them to share my work on my portfolio. The website is CentennialMats.com. I ended up redesigning the 15 pages of their website, as well as designing the UI for both desktop and mobile devices.
+
+![image](https://user-images.githubusercontent.com/83846945/120906104-f1e61c80-c613-11eb-9a6f-3bb4b7e29ca1.png)
+
+![image](https://user-images.githubusercontent.com/83846945/120906135-32459a80-c614-11eb-97f3-f2c2df52fb57.png)
+
+![image](https://user-images.githubusercontent.com/83846945/120906163-615c0c00-c614-11eb-8a73-311148a7f205.png)
+
+
