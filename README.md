@@ -19,6 +19,52 @@ I am also familiar with Windows, Linux, and MacOS operating systems.
 
 ## My Work
 
+### Python
+
+This program is a reddit bot that analyzes a particular reddit page for posts using keywords, and can reply to posts with any phrase you would like.
+
+![image](https://user-images.githubusercontent.com/83846945/120905495-9e71cf80-c60f-11eb-94d5-dca469a563d2.png)
+
+    import praw
+
+    userAgent = 'Bot Name'
+    cID = [insert bot id supplied by reddit here]
+    cSC = [insert bot id supplied by reddit here]
+    userName = [insert username here]
+    userPassword = [insert password here]
+    numFound = 0
+    reddit = praw.Reddit(user_agent=userAgent, client_id=cID,
+                        client_secret=cSC, username=userName,
+                        password=userPassword)
+
+    #any subreddit you want to monitor.
+    subreddit = reddit.subreddit('askreddit') 
+
+    #phrase the bot uses.
+    bot_phrase = 'Let me answer this question, with another question\n\nHow much sawdust can you put into a Rice Krispie Treat before people start to notice?'
+
+    #makes a set of keywords to find in subreddits
+    keywords = {'the', 'of', 'reddit'}
+
+    #this views the top 10 posts in that subbreddit
+    for submission in subreddit.new(limit=10):
+            #makes the post title lowercase so we can compare our keywords with it.
+            n_title = submission.title.lower()
+            for i in keywords: #goes through our keywords
+                    if i in n_title: #if one of our keywords matches a title in the top 10 of the subreddit
+                            numFound = numFound + 1
+                            print('Bot replying to: ') #replies and outputs to the command line
+                            print("Title: ", submission.title)
+                            print("Text: ", submission.selftext)
+                            print("Score: ", submission.score)
+                            print("---------------------------------")
+                            print('Bot saying: ', bot_phrase)
+                            print()
+                            submission.reply(bot_phrase)
+    if numFound == 0:
+            print()
+            print("Sorry, didn't find any posts with those keywords, try again!")
+
 ### C#
 
 I made this program in 2020. It is called "Preferred Customer." It takes a customer's ID number as an input from a text file, and supplies information on that customer, including their personal info, how much they have spent at a company, and if they are subscribed to an email list or not. This would be useful for corporations that wish to save customer info for targeted marketing or similar practices.
