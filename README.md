@@ -19,6 +19,31 @@ I am also familiar with Windows, Linux, and MacOS operating systems.
 
 ## My Work
 
+### Java
+
+One time, my family and I wanted to play a board game that required three custom dice. We did not have these dice, so my family challenged me to make a program that could simulate the dice roll.
+
+    import java.util.Random;
+    public class StockTickerDice {
+	
+		static String sName[] = {"Gold", "Silver", "Bonds", "Oil", "Industrial", "Grain"};
+		static int sValue[] = {5,10,15,20};
+		static String sAction[] = {"Up", "Down", "Pays"};
+		static int stockName = new Random().nextInt(sName.length);
+		static int stockValue = new Random().nextInt(sValue.length);
+		static int stockAction = new Random().nextInt(sAction.length);
+		
+		public static void main(String[] args) {
+        	System.out.println(String.valueOf(sName[stockName]) + " " + String.valueOf(sAction[stockAction]) + " " + String.valueOf(sValue[stockValue]));
+        }	
+    }
+    
+Afterwards, we had a spare android tablet that we wanted to import the dice simulator onto, so I got onto Android Studio and made a UI for it, then exported it onto the device. We can now play the board game (it's called Stock Ticker) with ease! I even added a section to switch one of the dice from stocks to cryptocurrency!
+
+![image](https://user-images.githubusercontent.com/83846945/120906003-34f3c000-c613-11eb-84e0-a8e292100f57.png)
+
+
+
 ### Python
 
 This program is a reddit bot that analyzes a particular reddit page for posts using keywords, and can reply to posts with any phrase you would like.
@@ -64,6 +89,8 @@ This program is a reddit bot that analyzes a particular reddit page for posts us
     if numFound == 0:
             print()
             print("Sorry, didn't find any posts with those keywords, try again!")
+
+
 
 ### C#
 
@@ -308,6 +335,8 @@ Person.cs
             public string Address { get; set; }    
         }
     }
+
+
 
 ### Visual Basic
 
