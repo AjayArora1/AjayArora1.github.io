@@ -1,0 +1,90 @@
+html {
+    background-color: gainsboro;
+    font-family: "Flexo-Regular", arial, sans-serif;
+}
+
+a {
+    color: black;
+}
+
+a:active, a:visited {
+    color: black;
+}
+
+.allContent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.allContentColumnLeft {
+    grid-area: 1 / 1 / 2 / 2;
+    width: 33%;
+}
+
+.allContentColumnMiddle {
+    grid-area: 1 / 2 / 2 / 3;
+    width: 33%;
+}
+
+.allContentColumnRight {
+    grid-area: 1 / 3 / 2 / 4;
+    background-color: lightgrey;
+    border-radius: 12px;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
+    padding: 16px;
+    margin: 32px;
+    height: fit-content;
+}
+
+.projectContainer {
+    border: 1px solid gainsboro;
+    border-radius: 16px;
+    height: fit-content;
+    width: 400px;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
+    padding: 16px;
+    margin: 32px;
+    transition: all .2s ease-in-out;
+}
+
+.projectContainer:hover {
+    transform: scale(1.05);
+    transition: all .2s ease-in-out;
+}
+
+.projectContainerImage {
+    height: 50%;
+}
+
+.bioContainerImage img {
+    height: 50%;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.bioContainer h1, p {
+    margin: 32px;
+}
+
+.projectContainerText {
+    height: 50%;
+    text-align: center;
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+img {
+    width: 400px;
+    border-radius: 12px;
+    border: 1px solid lightgrey;
+    filter: grayscale(1);
+}
