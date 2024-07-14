@@ -39,6 +39,9 @@ function Bio(props) {
 function App() {
     return (
         <div className="allContent">
+            <div className="allContentColumnRight">
+                <Bio url="https://media.licdn.com/dms/image/D5603AQFgpoqm1uB65Q/profile-displayphoto-shrink_400_400/0/1720890826893?e=1726099200&v=beta&t=2LYjxOK4ZLi17_qqFfdf8-QJeX-BvuX9btr5nMEM5DM" />
+            </div>
             <div className="allContentColumnLeft">
                 <a href="https://ajayarora1.github.io/Interactive_Pokedex">
                     <Project url='/img/ip.png' name="Interactive Pokedex" description="A Pokedex I built using ReactJS and PokeAPI. Work in progress." year="2024" />
@@ -58,10 +61,6 @@ function App() {
                     <Project url='/img/sr.jpg' name="Squares Rage" description="A platformer game I built using GameMaker Studio and it's scripting language." year="2020" />
                 </a>
             </div>
-            <div className="allContentColumnRight">
-                <Bio url="https://media.licdn.com/dms/image/D5603AQFhaXrrbQv-XQ/profile-displayphoto-shrink_400_400/0/1665448650275?e=1724889600&v=beta&t=mgmBBgFGm9_riiacr13VmbheImBsZHol1OVLsQnSUPw"/>
-            </div>
-                
         </div>  
     );
 }
