@@ -1,67 +1,310 @@
+import './style.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.scss';
-function Project(props) {
+import Mail from './assets/mail.png'
+import Linkedin from './assets/linkedin.png'
+import GitHub from './assets/github.png'
+import YouTube from './assets/youtube.png'
+import Instagram from './assets/instagram.png'
+import ClickerGame from './assets/images/ccs.png'
+import PlatformerGame from './assets/images/sr.png'
+import Website from './assets/images/cms.png'
+import LibraryBookProcessor from './assets/images/bp.png'
+import Pokedex from './assets/images/ip.png'
+import ProfilePic from './assets/images/me.jpg'
+import { useEffect, useState } from "react";
+
+// Count up animation for each numeric item in bio container.
+const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+const CountUp = ({ end, duration = 1500 }) => {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        let startTime;
+        const startValue = 0;
+
+        const animate = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easedProgress = easeOutCubic(progress);
+            const currentValue = Math.floor(startValue + easedProgress * (end - startValue));
+
+            setCount(currentValue);
+
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            }
+        };
+
+        requestAnimationFrame(animate);
+    }, [end, duration]);
+
+    return <h2>{count}</h2>;
+};
+
+// Calculate age for numeric count up.
+const calculateAge = () => {
+    const today = new Date();
+    const birthDate = new Date(2000, 4, 9); // Months are 0-indexed (May = 4)
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const hasHadBirthdayThisYear =
+        today.getMonth() > birthDate.getMonth() ||
+        (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+
+    if (!hasHadBirthdayThisYear) {
+        age--;
+    }
+
+    return age;
+};
+
+const calculateYearsOfExperience = new Date().getFullYear() - 2022;
+
+function Heading({ title }) {
     return (
-        <div className="projectContainer">
-            <div className="projectContainerImage">
-                <img src={props.url} alt=""/>
-            </div>
-            <div className="projectContainerText">
-                <h3>{props.name}</h3>
-                <p>{props.description}</p>
-                <p>({props.year})</p>
+        <div className="heading">
+            <span className="lineBreak"></span>
+            <h1>{title}</h1>
+            <span className="lineBreak"></span>
+        </div>
+    );
+}
+
+// Reusable Component (Education item)
+function EducationItem({ schoolName, degree, years }) {
+    return (
+        <div className="educationItem">
+            <h3>{schoolName}</h3>
+            <p>{degree}</p>
+            <p>{years}</p>
+        </div>
+    );
+}
+
+// Reusable Component (Experience item)
+function ExperienceItem({ title, description }) {
+    return (
+        <div className="experienceItem">
+            <h3>{title}</h3>
+            <p>{description}</p>
+        </div>
+    );
+}
+
+function ProjectItem({ title, description, stack, year, imageUrl, finished }) {
+    return (
+        <div className="projectItem">
+            <div className="flipCardInner">
+                <div className="flipCardFront">
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                    <p>{stack}</p>
+                    <p>{year}</p>
+                </div>
+                <div className="flipCardBack">
+                    <img src={imageUrl} alt={title} />
+                </div>
             </div>
         </div>
     );
 }
 
+// Insert projects here.
+const projectData = [
+    {
+        title: "Clicker Game",
+        description: "An incremental clicker game I developed for fun. It was my first real coding project because I loved these types of games at the time.",
+        stack: "VB, C#",
+        year: "2019",
+        imageUrl: ClickerGame,
+        finished: true
+    },
+    {
+        title: "Platformer Game",
+        description: "A platformer game designed to make the user quit because it is so frustrating. I was definitely in a game development phase during this time.",
+        stack: "VB, C#",
+        year: "2020",
+        imageUrl: PlatformerGame,
+        finished: true
+    },
+    {
+        title: "Client Website",
+        description: "A website I designed and developed for a client's business.",
+        stack: "HTML, CSS, JavaScript, JQuery",
+        year: "2021",
+        imageUrl: Website,
+        finished: true
+    },
+    {
+        title: "Library Book Processor",
+        description: "My university capstone project which stores, processes, and modifies the inventory of a library.",
+        stack: "C#, HTML, CSS, JavaScript, MySQL",
+        year: "2022",
+        imageUrl: LibraryBookProcessor,
+        finished: true
+    },
+    {
+        title: "Interactive Pokedex",
+        description: "A program I made when I first discovered how powerful ReactJS was. Based on an encyclopedia from the popular video game.",
+        stack: "ReactJS, HTML, SASS",
+        year: "2024",
+        imageUrl: Pokedex,
+        finished: true
+    },
+    {
+        title: "Family Tree Maker (In Progress)",
+        description: "A program I am currently making for the sake of genealogy research which is one of my passions.",
+        stack: "ReactJS, HTML, SASS",
+        year: "2025",
+        finished: false
+    },
+    {
+        title: "AI Resume Generator (In Progress)",
+        description: "A program I am currently developing that uses AI to generate resumes and cover letters based on their minimal inputs.",
+        stack: "ReactJS, HTML, SASS, OpenAI API",
+        year: "2025",
+        finished: false
+    }
+];
+
+
+// Reusable Component (Age, Years of Experience, Projects worked on, Projects completed).
+function NumericItem({ end, title }) {
+    return (
+        <div className="numericItem">
+            <span className="number">
+                <CountUp end={end} />
+            </span>
+            <span className="countableItem">
+                <h2>{title}</h2>
+            </span>
+        </div>
+    );
+}
+
+function SocialLink({ href, imgSrc, altText }) {
+    return (
+        <a href={href} target="_blank" rel="noopener noreferrer">
+            <img src={imgSrc} alt={altText} />
+        </a>
+    );
+}
+
+function Education(props) {
+    return (
+        <div>
+            <Heading title="Education" />
+            <div className="educationItemContainer">
+                <EducationItem schoolName="Bishop Carroll High School" degree="High School Diploma" years="2015-2018" />
+                <EducationItem schoolName="Thompson Rivers University" degree="Diploma in Information Technology & Management" years="2018-2020" />
+                <EducationItem schoolName="Thompson Rivers University" degree="Bachelor's Degree in Computer Science" years="2018-2022" />
+            </div>
+        </div>  
+    );
+}
+
+function Experience(props) {
+    return (
+        <div>
+            <Heading title="Experience" />
+            <div className="experienceItemContainer">
+                <ExperienceItem
+                    title="Frontend Developer"
+                    description="Delivered and deployed multiple frontend applications for employers and private clients, including two websites and a custom client portal designed to enhance client engagement. Additional personal projects utilizing modern frontend frameworks are featured below."
+                />
+
+                <ExperienceItem
+                    title="Backend Developer"
+                    description="Designed and implemented backend systems across professional and personal projects, including API1130-compliant pipeline monitoring tools, various computer games, and ongoing independent initiatives."
+                />
+
+                <ExperienceItem
+                    title="I.T. Support"
+                    description="Provided technical support for both internal teams and external clients, resolving a wide range of software and hardware issues with efficiency and adaptability. Frequently self-initiated quick learning to address unfamiliar challenges."
+                />
+
+                <ExperienceItem
+                    title="Team Lead & Educator"
+                    description="Led software development teams across multiple projects and coordinated with fellow educators in instructional environments. Delivered technical seminars to groups of up to 10 students, focusing on computer literacy and foundational IT concepts."
+                />
+
+            </div>
+        </div>
+    );
+}
+
+
+function Projects(props) {
+    return (
+        <div>
+            <Heading title="Projects" />
+            <div className="projectItemContainer">
+                {projectData.map((proj, idx) => (
+                    <ProjectItem key={idx} {...proj} />
+                ))}
+            </div>
+        </div>
+    );
+}
+
+
 function Bio(props) {
     return (
         <div className="bioContainer">
-            <h1>About Me:</h1>
-            <div className="bioContainerImage">
-                <img src={props.url} alt="" />
+            <div className="nameJobLocationContainer">
+                <h1>Hello, I'm</h1>
+                <div className="name-hover">
+                    <h1>
+                        <span className="firstName">Ajay
+                            <span className="lastName"> Arora</span>
+                        </span>
+                    </h1>
+                </div>
+                <br /><br />
+                <div className="profileImageContainer">
+                    <img src={ProfilePic} alt="Profile" />
+                </div>
+                <h2>Software Developer</h2>
+                <h2>Calgary, AB, Canada</h2>
             </div>
-            <p>
-                Hello, I'm Ajay Arora, a dedicated full-stack software developer with a strong passion for computer programming and learning new technologies.<br /><br />
-                My expertise spans various languages, including C++, Python, and C# for back-end languages, as well as HTML, CSS, JavaScript, and PHP on the front-end.<br /><br />
-                I possess a proficient understanding of SQL databases, specifically PostgreSQL, and Linux-based systems. For object-oriented programming, I utilize Visual Studio as my preferred IDE.<br /><br />
-                I hold a 4-year degree in Computing Science from Thompson Rivers University, and have 2 years of professional experience in the field of software development.<br /><br />
-                Feel free to reach out to me at arora.ajay90@gmail.com. When connecting, kindly mention that you were referred from my Github profile.<br /><br />
-                Best regards,<br /><br />
-                Ajay Arora
-            </p>
+
+            <br/>
+
+            <div className="numericItemContainer">
+                <NumericItem end={calculateAge()} title="Years old" />
+                <NumericItem end={calculateYearsOfExperience} title="Years of experience" />
+                <NumericItem end={projectData.length} title="Projects worked on" />
+                <NumericItem end={projectData.filter(p => p.finished).length} title="Projects finished" />
+            </div>
+
+            <br />
+
+            <div className="socialInfoContainer">
+                <SocialLink href="mailto:arora.ajay90@gmail.com" imgSrc={Mail} altText="Mail" />
+                <SocialLink href="https://www.linkedin.com/in/ajay-arora1" imgSrc={Linkedin} altText="Linkedin" />
+                <SocialLink href="https://github.com/ajayarora1" imgSrc={GitHub} altText="GitHub" />
+                <SocialLink href="https://www.youtube.com/c/your-channel" imgSrc={YouTube} altText="YouTube" />
+                <SocialLink href="https://www.instagram.com/555ajayarora" imgSrc={Instagram} altText="Instagram" />
+            </div>
         </div>
     );
 }
 
 function App() {
     return (
-        <div className="allContent">
-            <div className="allContentColumnRight">
-                <Bio url="https://media.licdn.com/dms/image/D5603AQFgpoqm1uB65Q/profile-displayphoto-shrink_400_400/0/1720890826893?e=1726099200&v=beta&t=2LYjxOK4ZLi17_qqFfdf8-QJeX-BvuX9btr5nMEM5DM" />
+        <div>
+            <div className="header">
+                <h1>ajayarora<span className="headerNameSuffix">.me</span></h1>
+            </div> 
+            <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600&display=swap" rel="stylesheet"/>
+            <div className="hexBackground">
+                <Bio />
             </div>
-            <div className="allContentColumnLeft">
-                <a href="https://ajayarora1.github.io/Interactive_Pokedex">
-                    <Project url='/img/ip.png' name="Interactive Pokedex" description="A Pokedex I built using ReactJS and PokeAPI. Work in progress." year="2024" />
-                </a>
-                <a href="https://centennialmats.com">
-                    <Project url='/img/cms.png' name="Website for Centennial Mats" description="A website I built for a client using HTML, CSS, JavaScript, and JQuery." year="2021" />
-                </a>
-                <a href="https://store.steampowered.com/app/1103920/Clickable_Coffee_Shop/">
-                    <Project url='/img/ccs.jpg' name="Clickable Coffee Shop" description="An incremental game I built using WinForms and VB, later remade with GameMaker Studio." year="2019" />
-                </a>
-            </div>
-            <div className="allContentColumnMiddle">
-                <a href="https://github.com/AjayArora1/Book-Processing-Software-for-Public-Libraries/tree/master">
-                    <Project url='/img/bp.png' name="Library Book Processing" description="A program I built for my university capstone that processes library inventory." year="2022" />
-                </a>
-                <a href="https://store.steampowered.com/app/1399850/Squares_Rage/">
-                    <Project url='/img/sr.jpg' name="Squares Rage" description="A platformer game I built using GameMaker Studio and it's scripting language." year="2020" />
-                </a>
-            </div>
-        </div>  
+            <Education />
+            <Experience />
+            <Projects />
+        </div>
     );
 }
 

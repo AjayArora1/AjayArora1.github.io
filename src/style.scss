@@ -1,139 +1,329 @@
-html {
-    background-color: gainsboro;
-    font-family: "Flexo-Regular", arial, sans-serif;
+﻿html {
+    background-color: #1c1c22;
+    font-family: 'Zilla Slab', serif;
 }
 
-a {
-    color: black;
+h1 {
+    font-family: 'Zilla Slab', serif;
+    color: #f0f2f5;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 0.6;
+    letter-spacing: -0.02em;
 }
 
-a:active, a:visited {
-    color: black;
+h2 {
+    font-family: 'Zilla Slab', serif;
+    color: #f0f2f5;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 0.6;
+    letter-spacing: -0.02em;
 }
 
-@media (orientation: landscape) {
-    .allContent {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
+h3 {
+    font-family: 'Zilla Slab', serif;
+    color: #f0f2f5;
+}
+
+.name-hover {
+    font-family: 'Zilla Slab', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #f0f2f5;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap; /* Prevent text from wrapping into multiple lines */
+    display: inline-block; /* Ensures that it behaves as inline content but retains block properties */
+    text-align: center; /* Center the text within the .name-hover */
+    margin: 0 auto; /* Ensures it's centered in its container */
+}
+
+.name-hover h1, .name-hover span {
+    margin: 0;
+    padding: 0;
+}
+
+.firstName {
+    opacity: 1;
+    transform: skewX(-10deg); /* Apply slight skew for the swipe effect */
+    animation: revealName 3s ease-out forwards; /* Apply animation */
+}
+
+.lastName {
+    color: #9f0ff7;
+    opacity: 0; /* Start with 0 opacity for the last name */
+    transform: skewX(-10deg); /* Apply slight skew for the swipe effect */
+    animation: revealName 5s ease-out forwards; /* Apply animation */
+}
+
+@keyframes revealName {
+    0% {
+        opacity: 0;
+        transform: skewX(-10deg); /* Start with a skewed position */
+    }
+
+    100% {
+        opacity: 1;
+        transform: skewX(0deg); /* End with no skew and full opacity */
     }
 }
 
-@media (orientation: portrait) {
-    .allContent {
-        display: inline-block;
-    }
+.numericItemContainer {
+    display: flex;
+    justify-content: space-between; /* even spacing */
+    align-items: center; /* align items vertically */
+    flex-wrap: wrap; /* allows wrapping if screen is too narrow */
+    gap: 1rem; /* optional: space between items */
+    height: 33%;
 }
 
-@media (orientation: landscape) {
-    .allContentColumnLeft {
-        grid-area: 1 / 1 / 2 / 2;
-        width: 33%;
-    }
-
-    .allContentColumnMiddle {
-        grid-area: 1 / 2 / 2 / 3;
-        width: 33%;
-    }
-
-    .allContentColumnRight {
-        grid-area: 1 / 3 / 2 / 4;
-        background-color: lightgrey;
-        border-radius: 12px;
-        -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
-        box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
-        padding: 16px;
-        margin: 32px;
-        height: fit-content;
-    }
-
-    .projectContainer {
-        border: 1px solid gainsboro;
-        border-radius: 16px;
-        height: fit-content;
-        width: 400px;
-        -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
-        box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
-        padding: 16px;
-        margin: 32px;
-        transition: all .2s ease-in-out;
-    }
-}
-
-@media (orientation: portrait) {
-    .allContentColumnLeft {
-        width: 100%;
-    }
-
-    .allContentColumnMiddle {
-        width: 100%;
-    }
-
-    .allContentColumnRight {
-        background-color: lightgrey;
-        border-radius: 16px;
-        -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
-        box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
-        padding: 16px;
-        margin-top: 32px;
-        margin-bottom: 32px;
-        margin-left: auto;
-        margin-right: auto;
-        height: fit-content;
-        width: 80%;
-    }
-
-    .projectContainer {
-        border: 1px solid gainsboro;
-        border-radius: 16px;
-        height: fit-content;
-        width: 80%;
-        -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
-        box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
-        padding: 16px;
-        margin-top: 32px;
-        margin-bottom: 32px;
-        margin-left: auto;
-        margin-right: auto;
-        transition: all .2s ease-in-out;
-    }
-}
-
-.projectContainer:hover {
-    transform: scale(1.05);
-    transition: all .2s ease-in-out;
-}
-
-.projectContainerImage {
-    height: 50%;
-}
-
-.bioContainerImage img {
-    height: 50%;
-    border-radius: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
-.bioContainer h1, p {
-    margin: 32px;
-}
-
-.projectContainerText {
-    height: 50%;
-    text-align: center;
-    line-height: 1.5;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-img {
+.hexBackground {
+    background-color: #1c1c22;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='60' height='60' fill='none' stroke='%232a2a33' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
+    background-repeat: repeat;
+    min-height: 100vh;
     width: 100%;
-    border-radius: 12px;
-    border: 1px solid lightgrey;
-    filter: grayscale(1);
+    position: relative;
+    z-index: 0;
+    /* Fading effect from center using radial mask */
+    -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 99%);
+    mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 99%);
+    mask-mode: alpha;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+   // clip-path: inset(1px 0px 0px 0px); /* This cuts off the top
+}
+
+
+.numericItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center number + label horizontally */
+    text-align: center;
+    flex: 1; /* optional: make all items the same width */
+    min-width: 150px; /* optional: responsive min width */
+}
+
+.number h2,
+.countableItem h2 {
+    margin: 8px; /* remove default margin for tighter layout */
+    align-items: center;
+    text-align: center;
+}
+
+.number h2 {
+    font-size: 36px;
+    color: #9f0ff7;
+}
+
+.nameJobLocationContainer {
+    display: flex; /* Use flexbox to align items */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Horizontally center items */
+    text-align: center; /* Center the text within each child */
+    width: 100%; /* Ensure the container takes full width */
+}
+
+.socialInfoContainer {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Horizontally center items */
+    text-align: center; /* Center the text within each child */
+    width: 100%; /* Ensure the container takes full width */
+
+    img {
+        height: 50px;
+        margin: 8px;
+    }
+}
+
+.heading {
+    margin: 30px; /* Add some space below the heading */
+    align-items: center; /* Vertically center the items */
+    text-align: center; /* Center the text within each child */
+}
+
+.lineBreak {
+    display: block; /* Make the span a block element */
+    width: 90%; /* Set the width to 80% of the page */
+    margin: 8px auto; /* 8px top and bottom margins, centered horizontally */
+    height: 2px; /* Set the line thickness */
+    background-color: #6a1b9a; /* Your purple color */
+}
+
+.educationItem {
+    color: #a1a1aa;
+    border: 1px solid #a1a1aa;
+    border-radius: 16px;
+    flex: 1; /* Make the items take equal width */
+    margin: 0 20px; /* Add some spacing between the items */
+    padding: 20px; /* Adjust padding as needed */
+    min-width: 150px; /* Set a minimum width for the items */
+}
+
+.educationItemContainer {
+    display: flex; /* Use flexbox for the container */
+    justify-content: space-between; /* Space out the items evenly */
+    align-items: center; /* Vertically center the items */
+    text-align: center; /* Center the text within each child */
+    width: 100%; /* Ensure the container takes full width */
+    flex-wrap: wrap; /* Allow items to wrap when necessary */
+}
+
+/* Media query to stack items vertically on narrow screens */
+@media (max-width: 768px) {
+    .educationItemContainer {
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Vertically center the items */
+        align-items: center; /* Horizontally center the items */
+
+    }
+
+    .educationItem {
+        margin: 10px 10px; /* Adjust margin when stacked vertically */
+        width: 50%;
+    }
+}
+
+.experienceItemContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.experienceItem {
+    color: #a1a1aa;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 10px 20px; /* Matches education side spacing */
+    min-width: 250px;
+    flex: 1 1 calc(50% - 40px); /* 50% minus left+right margin */
+    box-sizing: border-box;
+    background-color: #16161d;
+
+    p {
+        color: #f0f2f0;
+    }
+}
+
+
+
+/* Media query to stack items vertically on narrow screens */
+@media (max-width: 768px) {
+    .experienceItemContainer {
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Vertically center the items */
+        align-items: center; /* Horizontally center the items */
+    }
+
+    .experienceItem {
+        margin: 10px 10px; /* Adjust margin when stacked vertically */
+        width: 50%;
+    }
+}
+
+.header {
+
+    margin: 0 20px 0 20px;
+
+    .headerNameSuffix {
+        color: #9f0ff7;
+    }
+}
+
+.profileImageContainer {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #a855f7; /* Your purple */
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 12px auto; /* center + some space below */
+}
+
+.profileImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.projectItemContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.projectItem {
+    perspective: 1000px;
+    min-width: 250px;
+    flex: 1 1 calc(50% - 40px);
+    margin: 10px 20px;
+    height: 220px; /* Or whatever consistent height you want */
+}
+
+.flipCardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    background-color: #16161d;
+}
+
+.projectItem:hover .flipCardInner {
+    transform: rotateX(180deg);
+}
+
+.flipCardFront {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    background-color: #16161d;
+    color: #a1a1aa;
+}
+
+.flipCardBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+}
+
+.flipCardFront p {
+    color: #f0f2f0;
+}
+
+.flipCardBack {
+    transform: rotateX(180deg);
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flipCardBack img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 16px;
 }
