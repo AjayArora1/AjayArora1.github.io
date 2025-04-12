@@ -87,14 +87,20 @@ h3 {
     width: 100%;
     position: relative;
     z-index: 0;
-    /* Fading effect from center using radial mask */
-    -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 99%);
-    mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 99%);
-    mask-mode: alpha;
-    mask-repeat: no-repeat;
-    mask-size: cover;
-   // clip-path: inset(1px 0px 0px 0px); /* This cuts off the top
+    /* Default: No gradient */
+    mask-image: none;
 }
+
+/* Apply gradient only when the screen width is greater than the height */
+@media (min-width: 768px) and (orientation: landscape) {
+    .hexBackground {
+        -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 99%);
+        mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 99%);
+        mask-repeat: no-repeat;
+        mask-size: cover;
+    }
+}
+
 
 
 .numericItem {
@@ -138,6 +144,17 @@ h3 {
     }
 }
 
+/* Smooth transition for transform */
+.socialLink {
+    display: inline-block;
+    transition: transform 0.3s ease; /* Adjust timing as needed */
+}
+
+/* Rotate the social link slightly on hover */
+.socialLink:hover {
+    transform: rotate(15deg); /* Rotate by 10 degrees or tweak as desired */
+}
+
 .heading {
     margin: 30px; /* Add some space below the heading */
     align-items: center; /* Vertically center the items */
@@ -153,13 +170,36 @@ h3 {
 }
 
 .educationItem {
+    position: relative;
+    overflow: hidden; /* Important so overlay doesn't spill */
     color: #a1a1aa;
     border: 1px solid #a1a1aa;
     border-radius: 16px;
-    flex: 1; /* Make the items take equal width */
-    margin: 0 20px; /* Add some spacing between the items */
-    padding: 20px; /* Adjust padding as needed */
-    min-width: 150px; /* Set a minimum width for the items */
+    margin: 0 20px;
+    padding: 20px;
+    min-width: 150px;
+    flex: 1;
+    transition: background 0.3s ease;
+}
+
+.educationOverlay {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: rgba(159, 15, 247, 0.2);
+    filter: blur(60px);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.educationItem:hover .educationOverlay {
+    opacity: 1;
 }
 
 .educationItemContainer {
@@ -204,6 +244,7 @@ h3 {
     flex: 1 1 calc(50% - 40px); /* 50% minus left+right margin */
     box-sizing: border-box;
     background-color: #16161d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 
     p {
         color: #f0f2f0;
@@ -259,6 +300,7 @@ h3 {
     justify-content: center;
     width: 100%;
     text-align: center;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 .projectItem {
@@ -266,7 +308,27 @@ h3 {
     min-width: 250px;
     flex: 1 1 calc(50% - 40px);
     margin: 10px 20px;
-    height: 220px; /* Or whatever consistent height you want */
+    height: 220px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+.projectItem p {
+    word-wrap: break-word; /* Ensure long words break to the next line */
+    overflow: hidden; /* Prevent text from spilling outside */
+    text-overflow: ellipsis; /* Optional: Adds '...' for overflowed text */
+}
+
+@media (max-width: 767px) {
+    .projectItem {
+        flex: 1 1 100%; /* Allow the items to take full width on smaller screens */
+    }
+}
+
+.projectItem:hover {
+    cursor: pointer;
 }
 
 .flipCardInner {

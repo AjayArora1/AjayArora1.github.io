@@ -1,5 +1,5 @@
 import './style.scss';
-import React from 'react';
+import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import Mail from './assets/mail.png'
 import Linkedin from './assets/linkedin.png'
@@ -73,8 +73,40 @@ function Heading({ title }) {
 
 // Reusable Component (Education item)
 function EducationItem({ schoolName, degree, years }) {
+    const overlayRef = useRef(null);
+    const containerRef = useRef(null);
+
+    const handleMouseMove = (e) => {
+        const rect = containerRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left - 150; // 300px / 2, the overlay is 300px;
+        const y = e.clientY - rect.top - 150; // 300px / 2, the overlay is 300px;
+
+        if (overlayRef.current) {
+            overlayRef.current.style.transform = `translate(${x}px, ${y}px)`;
+        }
+    };
+
+    const handleMouseEnter = () => {
+        if (overlayRef.current) {
+            overlayRef.current.style.opacity = '1';
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (overlayRef.current) {
+            overlayRef.current.style.opacity = '0';
+        }
+    };
+
     return (
-        <div className="educationItem">
+        <div
+            className="educationItem"
+            ref={containerRef}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
+            <div className="educationOverlay" ref={overlayRef}></div>
             <h3>{schoolName}</h3>
             <p>{degree}</p>
             <p>{years}</p>
@@ -92,23 +124,26 @@ function ExperienceItem({ title, description }) {
     );
 }
 
-function ProjectItem({ title, description, stack, year, imageUrl, finished }) {
+function ProjectItem({ title, description, stack, year, imageUrl, finished, projectUrl }) {
     return (
         <div className="projectItem">
-            <div className="flipCardInner">
-                <div className="flipCardFront">
-                    <h3>{title}</h3>
-                    <p>{description}</p>
-                    <p>{stack}</p>
-                    <p>{year}</p>
+            <a href={projectUrl} target="_blank" rel="noopener noreferrer" className="projectItemLink">
+                <div className="flipCardInner">
+                    <div className="flipCardFront">
+                        <h3>{title}</h3>
+                        <p>{description}</p>
+                        <p>{stack}</p>
+                        <p>{year}</p>
+                    </div>
+                    <div className="flipCardBack">
+                        <img src={imageUrl} alt={title} />
+                    </div>
                 </div>
-                <div className="flipCardBack">
-                    <img src={imageUrl} alt={title} />
-                </div>
-            </div>
+            </a>
         </div>
     );
 }
+
 
 // Insert projects here.
 const projectData = [
@@ -118,7 +153,8 @@ const projectData = [
         stack: "VB, C#",
         year: "2019",
         imageUrl: ClickerGame,
-        finished: true
+        finished: true,
+        projectUrl: 'https://store.steampowered.com/app/1103920/Clickable_Coffee_Shop/'
     },
     {
         title: "Platformer Game",
@@ -126,7 +162,8 @@ const projectData = [
         stack: "VB, C#",
         year: "2020",
         imageUrl: PlatformerGame,
-        finished: true
+        finished: true,
+        projectUrl: 'https://store.steampowered.com/app/1399850/Squares_Rage/'
     },
     {
         title: "Client Website",
@@ -134,7 +171,8 @@ const projectData = [
         stack: "HTML, CSS, JavaScript, JQuery",
         year: "2021",
         imageUrl: Website,
-        finished: true
+        finished: true,
+        projectUrl: 'http://centennialmats.com/'
     },
     {
         title: "Library Book Processor",
@@ -142,7 +180,8 @@ const projectData = [
         stack: "C#, HTML, CSS, JavaScript, MySQL",
         year: "2022",
         imageUrl: LibraryBookProcessor,
-        finished: true
+        finished: true,
+        projectUrl: 'https://github.com/AjayArora1/Book-Processing-Software-for-Public-Libraries/tree/master'
     },
     {
         title: "Interactive Pokedex",
@@ -150,21 +189,24 @@ const projectData = [
         stack: "ReactJS, HTML, SASS",
         year: "2024",
         imageUrl: Pokedex,
-        finished: true
+        finished: true,
+        projectUrl: 'https://ajayarora1.github.io/Interactive_Pokedex/'
     },
     {
         title: "Family Tree Maker (In Progress)",
         description: "A program I am currently making for the sake of genealogy research which is one of my passions.",
         stack: "ReactJS, HTML, SASS",
         year: "2025",
-        finished: false
+        finished: false,
+        projectUrl: ''
     },
     {
         title: "AI Resume Generator (In Progress)",
         description: "A program I am currently developing that uses AI to generate resumes and cover letters based on their minimal inputs.",
         stack: "ReactJS, HTML, SASS, OpenAI API",
         year: "2025",
-        finished: false
+        finished: false,
+        projectUrl: ''
     }
 ];
 
@@ -185,7 +227,7 @@ function NumericItem({ end, title }) {
 
 function SocialLink({ href, imgSrc, altText }) {
     return (
-        <a href={href} target="_blank" rel="noopener noreferrer">
+        <a href={href} target="_blank" rel="noopener noreferrer" className="socialLink">
             <img src={imgSrc} alt={altText} />
         </a>
     );
