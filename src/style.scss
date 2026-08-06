@@ -278,7 +278,7 @@ h3 {
     z-index: 0;
 }
 
-.educationItem .educationOverlay {
+.educationItem:hover .educationOverlay {
     opacity: 1;
 }
 
