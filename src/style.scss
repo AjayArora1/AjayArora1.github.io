@@ -12,7 +12,7 @@ h1 {
     letter-spacing: -0.02em;
 }
 
-h2 {
+menu h2 {
     font-family: 'Zilla Slab', serif;
     color: #f0f2f5;
     font-size: 24px;
@@ -34,9 +34,9 @@ h3 {
     cursor: pointer;
     position: relative;
     white-space: nowrap; /* Prevent text from wrapping into multiple lines */
-    display: inline-block; /* Ensures that it behaves as inline content but retains block properties */
-    text-align: center; /* Center the text within the .name-hover */
-    margin: 0 auto; /* Ensures it's centered in its container */
+    display: inline-block; // Ensures that it behaves as inline content but retains block properties
+    text-align: center; // Center the text within the .name-hover
+    margin: 0 auto; // Ensures it's centered in its container */
 }
 
 .name-hover h1, .name-hover span {
@@ -46,15 +46,15 @@ h3 {
 
 .firstName {
     opacity: 1;
-    transform: skewX(-10deg); /* Apply slight skew for the swipe effect */
-    animation: revealName 3s ease-out forwards; /* Apply animation */
+    transform: skewX(-10deg); 
+    animation: revealName 3s ease-out forwards;
 }
 
 .lastName {
     color: #9f0ff7;
-    opacity: 0; /* Start with 0 opacity for the last name */
-    transform: skewX(-10deg); /* Apply slight skew for the swipe effect */
-    animation: revealName 5s ease-out forwards; /* Apply animation */
+    opacity: 0; 
+    transform: skewX(-10deg); 
+    animation: revealName 5s ease-out forwards;
 }
 
 @keyframes revealName {
@@ -71,10 +71,10 @@ h3 {
 
 .numericItemContainer {
     display: flex;
-    justify-content: space-between; /* even spacing */
-    align-items: center; /* align items vertically */
-    flex-wrap: wrap; /* allows wrapping if screen is too narrow */
-    gap: 1rem; /* optional: space between items */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
     height: 33%;
 }
 
@@ -86,8 +86,7 @@ h3 {
     min-height: 100vh;
     width: 100%;
     position: relative;
-    z-index: 0;
-    /* Default: No gradient */
+    z-index: 0; /* Default: No gradient */
     mask-image: none;
 }
 
@@ -101,22 +100,28 @@ h3 {
     }
 }
 
+.bioContainer {
+    color: #f0f2f5;
+}
 
+.bioContainer h2, .bioContainer p {
+    color: #f0f2f5;
+}
 
 .numericItem {
     display: flex;
     flex-direction: column;
-    align-items: center; /* center number + label horizontally */
-    text-align: center;
-    flex: 1; /* optional: make all items the same width */
-    min-width: 150px; /* optional: responsive min width */
-}
-
-.number h2,
-.countableItem h2 {
-    margin: 8px; /* remove default margin for tighter layout */
     align-items: center;
     text-align: center;
+    flex: 0 0 auto;
+    min-width: 150px;
+}
+
+.number h2, .countableItem h2 {
+    margin: 8px;
+    align-items: center;
+    text-align: center;
+    color: #f0f2f5;
 }
 
 .number h2 {
@@ -125,18 +130,18 @@ h3 {
 }
 
 .nameJobLocationContainer {
-    display: flex; /* Use flexbox to align items */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Horizontally center items */
-    text-align: center; /* Center the text within each child */
-    width: 100%; /* Ensure the container takes full width */
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+    width: 100%;
 }
 
 .socialInfoContainer {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Horizontally center items */
-    text-align: center; /* Center the text within each child */
-    width: 100%; /* Ensure the container takes full width */
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    width: 100%;
 
     img {
         height: 50px;
@@ -144,42 +149,117 @@ h3 {
     }
 }
 
-/* Smooth transition for transform */
+.downloadResume {
+    border: 2px solid #9f0ff7;
+    border-radius: 32px;
+    background-color: #1c1c22;
+    color: #9f0ff7;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    width: 150px;
+    align-items: center; 
+    text-align: center;
+    margin: 8px auto;
+    text-decoration: none;
+}
+
+.downloadResume:hover {
+    border: 2px solid #1c1c22;
+    border-radius: 32px;
+    background-color: #9f0ff7;
+    color: #1c1c22;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+// Smooth transition for transform 
 .socialLink {
     display: inline-block;
-    transition: transform 0.3s ease; /* Adjust timing as needed */
+    transition: transform 0.3s ease;
+
 }
 
-/* Rotate the social link slightly on hover */
+// Rotate the social link slightly on hover 
 .socialLink:hover {
-    transform: rotate(15deg); /* Rotate by 10 degrees or tweak as desired */
+    transform: rotate(15deg); 
 }
+
 
 .heading {
-    margin: 30px; /* Add some space below the heading */
-    align-items: center; /* Vertically center the items */
-    text-align: center; /* Center the text within each child */
+    margin: 30px; 
+    align-items: center; 
+    text-align: center; 
 }
 
 .lineBreak {
-    display: block; /* Make the span a block element */
-    width: 90%; /* Set the width to 80% of the page */
-    margin: 8px auto; /* 8px top and bottom margins, centered horizontally */
-    height: 2px; /* Set the line thickness */
-    background-color: #6a1b9a; /* Your purple color */
+    display: block; // Make the span a block element
+    width: 90%; // Set the width to 80% of the page
+    margin: 8px auto; // 8px top and bottom margins, centered horizontally
+    height: 2px; // Set the line thickness
+    background-color: #6a1b9a;
+}
+
+.educationItemContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .educationItem {
-    position: relative;
-    overflow: hidden; /* Important so overlay doesn't spill */
+    position: relative; // needed for overlay
+    overflow: hidden;
+    width: 80%;
+    max-width: 900px;
     color: #a1a1aa;
-    border: 1px solid #a1a1aa;
+    border: 1px solid #1e293b;
     border-radius: 16px;
-    margin: 0 20px;
     padding: 20px;
-    min-width: 150px;
-    flex: 1;
-    transition: background 0.3s ease;
+    margin: 10px 0;
+    background-color: #16161d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+.educationHeader {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.educationHeader img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.educationInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.educationInfo h3 {
+    margin: 0;
+    color: #f0f2f5;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.educationDegree {
+    color: #9f0ff7;
+    font-size: 18px;
+    margin-top: 6px;
+    line-height: 1.2;
+}
+
+.educationDates {
+    margin-left: auto;
+    color: #a1a1aa;
+    white-space: nowrap;
 }
 
 .educationOverlay {
@@ -198,77 +278,123 @@ h3 {
     z-index: 0;
 }
 
-.educationItem:hover .educationOverlay {
+.educationItem .educationOverlay {
     opacity: 1;
 }
 
-.educationItemContainer {
-    display: flex; /* Use flexbox for the container */
-    justify-content: space-between; /* Space out the items evenly */
-    align-items: center; /* Vertically center the items */
-    text-align: center; /* Center the text within each child */
-    width: 100%; /* Ensure the container takes full width */
-    flex-wrap: wrap; /* Allow items to wrap when necessary */
-}
-
-/* Media query to stack items vertically on narrow screens */
 @media (max-width: 768px) {
     .educationItemContainer {
-        flex-direction: column; /* Stack items vertically */
-        justify-content: center; /* Vertically center the items */
-        align-items: center; /* Horizontally center the items */
-
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .educationItem {
-        margin: 10px 10px; /* Adjust margin when stacked vertically */
-        width: 50%;
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .educationHeader {
+        flex-wrap: wrap;
+    }
+
+    .educationDates {
+        margin-left: 0;
+        width: 100%;
     }
 }
 
 .experienceItemContainer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    text-align: center;
 }
 
 .experienceItem {
+    width: 80%;
+    max-width: 900px;
     color: #a1a1aa;
     border: 1px solid #1e293b;
     border-radius: 16px;
     padding: 20px;
-    margin: 10px 20px; /* Matches education side spacing */
-    min-width: 250px;
-    flex: 1 1 calc(50% - 40px); /* 50% minus left+right margin */
-    box-sizing: border-box;
+    margin: 10px 0;
     background-color: #16161d;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
 
-    p {
-        color: #f0f2f0;
-    }
+.experienceHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.experienceHeader img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.experienceInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.experienceInfo h3 {
+    margin: 0;
+    color: #f0f2f5;
+    font-weight: 600;
+}
+
+.experienceTitle {
+    color: #9f0ff7;
+    font-size: 18px;
+    margin-top: 4px;
+}
+
+.experienceDates {
+    margin-left: auto;
+    color: #a1a1aa;
+    white-space: nowrap;
+}
+
+.experienceItem p {
+    margin-left: 80px; /* aligns description under text, not logo */
+    margin-top: 16px;
+    color: #f0f2f5;
+    line-height: 1.5;
 }
 
 
-
-/* Media query to stack items vertically on narrow screens */
 @media (max-width: 768px) {
     .experienceItemContainer {
-        flex-direction: column; /* Stack items vertically */
-        justify-content: center; /* Vertically center the items */
-        align-items: center; /* Horizontally center the items */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .experienceItem {
-        margin: 10px 10px; /* Adjust margin when stacked vertically */
-        width: 50%;
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .experienceHeader {
+        flex-wrap: wrap;
+    }
+
+    .experienceDates {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .experienceItem p {
+        margin-left: 0;
     }
 }
 
 .header {
-
     margin: 0 20px 0 20px;
 
     .headerNameSuffix {
@@ -279,13 +405,13 @@ h3 {
 .profileImageContainer {
     width: 150px;
     height: 150px;
-    border: 1px solid #a855f7; /* Your purple */
+    border: 1px solid #a855f7;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 12px auto; /* center + some space below */
+    margin: 0 auto 12px auto;
 }
 
 .profileImageContainer img {
@@ -296,29 +422,74 @@ h3 {
 
 .projectItemContainer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    text-align: center;
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 .projectItem {
-    perspective: 1000px;
-    min-width: 250px;
-    flex: 1 1 calc(50% - 40px);
-    margin: 10px 20px;
-    height: 220px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 900px;
+    color: #a1a1aa;
+    border: 1px solid #1e293b;
     border-radius: 16px;
-    box-sizing: border-box; /* Include padding in width calculation */
-    overflow: hidden; /* Prevent content from overflowing */
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #16161d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+.projectHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.projectHeader img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.projectInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.projectInfo h3 {
+    margin: 0;
+    color: #f0f2f5;
+    font-weight: 600;
+}
+
+.projectInfo a {
+    color: #f0f2f5;
+    text-decoration: none;
+}
+
+.projectInfo a {
+    color: #9f0ff7;
+}
+
+.projectStack {
+    color: #9f0ff7;
+    font-size: 18px;
+    margin-top: 4px;
+}
+
+.projectDates {
+    margin-left: auto;
+    color: #a1a1aa;
+    white-space: nowrap;
 }
 
 .projectItem p {
-    word-wrap: break-word; /* Ensure long words break to the next line */
-    overflow: hidden; /* Prevent text from spilling outside */
-    text-overflow: ellipsis; /* Optional: Adds '...' for overflowed text */
+    margin-left: 80px;
+    margin-top: 16px;
+    color: #f0f2f5;
+    line-height: 1.5;
 }
 
 @media (max-width: 767px) {
@@ -327,7 +498,7 @@ h3 {
     }
 }
 
-.projectItem:hover {
+.projectItem {
     cursor: pointer;
 }
 
@@ -342,7 +513,7 @@ h3 {
     background-color: #16161d;
 }
 
-.projectItem:hover .flipCardInner {
+.projectItem .flipCardInner {
     transform: rotateX(180deg);
 }
 
@@ -388,4 +559,69 @@ h3 {
     height: 100%;
     object-fit: fill;
     border-radius: 16px;
+}
+
+.skillsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.skillsItem {
+    height: 80px;
+    background-color: #16161d;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #f0f2f5;
+    font-size: 20px;
+}
+
+.skillsItem img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.skillsItem span {
+    color: #f0f2f5;
+}
+
+/* Seamless keyframes */ @keyframes scrollLeft {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* Hide all horizontal scrollbars */
+body {
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }

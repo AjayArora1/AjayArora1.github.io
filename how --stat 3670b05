@@ -1,0 +1,213 @@
+*   [33mcommit 526600e5b4b012bbbb50df6da704df3828f7e634[m[33m ([m[1;35mrefs/stash[m[33m)[m
+[31m|[m[32m\[m  Merge: 3670b05 1108050
+[31m|[m [32m|[m Author: RossDog Studios <Arora.ajay90@gmail.com>
+[31m|[m [32m|[m Date:   Thu Aug 6 12:01:14 2026 -0600
+[31m|[m [32m|[m 
+[31m|[m [32m|[m     WIP on gh-pages: 3670b05 Updates
+[31m|[m [32m|[m 
+[31m|[m * [33mcommit 11080500cf165deafa53f75c94554518941ca13a[m
+[31m|[m[31m/[m  Author: RossDog Studios <Arora.ajay90@gmail.com>
+[31m|[m   Date:   Thu Aug 6 12:01:14 2026 -0600
+[31m|[m   
+[31m|[m       index on gh-pages: 3670b05 Updates
+[31m|[m 
+* [33mcommit 3670b05ed0db78efe940b150d40a03d30b280301[m[33m ([m[1;31morigin/gh-pages[m[33m, [m[1;32mgh-pages[m[33m)[m
+[32m|[m Author: RossDog Studios <Arora.ajay90@gmail.com>
+[32m|[m Date:   Thu Aug 6 11:22:16 2026 -0600
+[32m|[m 
+[32m|[m     Updates
+[32m|[m 
+* [33mcommit 33a55027e438c12b0f24efa45e0cd26bda8b0fb0[m
+[32m|[m Author: Ajay Arora <83846945+AjayArora1@users.noreply.github.com>
+[32m|[m Date:   Thu Aug 6 11:00:03 2026 -0600
+[32m|[m 
+[32m|[m     Create CNAME
+[32m|[m 
+* [33mcommit 5cee02e8a6694bcfad989f233a74359615f753e5[m
+[32m|[m Author: RossDog Studios <Arora.ajay90@gmail.com>
+[32m|[m Date:   Thu Aug 6 10:48:10 2026 -0600
+[32m|[m 
+[32m|[m     Updates
+[32m|[m 
+* [33mcommit 37f15c645018ef2f2a1d08179701c5b8e905d978[m
+[32m|[m Author: Ajay Arora <83846945+AjayArora1@users.noreply.github.com>
+[32m|[m Date:   Thu Aug 6 10:34:56 2026 -0600
+[32m|[m 
+[32m|[m     Create index.html
+[32m|[m     
+[32m|[m     Added ajayarora.ca/instagram
+[32m|[m 
+* [33mcommit 7777c501bf10850687bce12637ee30e30b807d47[m
+[32m|[m Author: Ajay Arora <83846945+AjayArora1@users.noreply.github.com>
+[32m|[m Date:   Thu Aug 6 10:32:51 2026 -0600
+[32m|[m 
+[32m|[m     Create index.html
+[32m|[m     
+[32m|[m     Added ajayarora.ca/linkedin
+[32m|[m 
+* [33mcommit b7ae7522864669a2c9fc47692f8a02ce21757c60[m
+[32m|[m Author: Ajay Arora <83846945+AjayArora1@users.noreply.github.com>
+[32m|[m Date:   Thu Aug 6 10:30:34 2026 -0600
+[32m|[m 
+[32m|[m     Create index.html
+[32m|[m     
+[32m|[m     Added redirect for ajayarora.ca/github
+[32m|[m 
+* [33mcommit f32280de40d83970a6a8dfdcb2e9de625d8eb349[m
+[32m|[m Author: Ajay Arora <83846945+AjayArora1@users.noreply.github.com>
+[32m|[m Date:   Fri Jul 24 11:55:22 2026 -0600
+[32m|[m 
+[32m|[m     Create CNAME
+[32m|[m 
+* [33mcommit f840cd51301ef4e0abc96beddbf31d36b7f6d731[m
+[32m|[m Author: RossDog Studios <Arora.ajay90@gmail.com>
+[32m|[m Date:   Fri Jul 24 11:54:41 2026 -0600
+[32m|[m 
+[32m|[m     Updates
+[32m|[m 
+* [33mcommit fe8ff948c91fdc1a1082896f57920bf9ae87de4f[m
+[32m|[m Author: Ajay Arora <83846945+AjayArora1@users.noreply.github.com>
+[32m|[m Date:   Mon Jul 20 20:41:37 2026 -0600
+[32m|[m 
+[32m|[m     Create CNAME
+[32m|[m 
+* [33mcommit 997f66cbff0d5ae25fba5774a5f4f5ad5900e599[m
+[32m|[m Author: RossDog Studios <Arora.ajay90@gmail.com>
+[32m|[m Date:   Mon Jul 20 20:39:57 2026 -0600
+[32m|[m 
+[32m|[m     Updates
+[32m|[m 
+* [33mcommit a135ea3bc29cf91457d6f797eeb93e2737d97fc7[m
+[32m|[m Author: Ajay Arora <83846945+AjayArora1@users.noreply.github.com>
+[32m|[m Date:   Mon Jul 20 18:52:25 2026 -0600
+[32m|[m 
+[32m|[m     Create CNAME
+[32m|[m 
+* [33mcommit 78af80c96652fe37c3294438ce7c81b10de34bcc[m
+[32m|[m Author: RossDog Studios <Arora.ajay90@gmail.com>
+[32m|[m Date:   Mon Jul 20 18:50:09 2026 -0600
+[32m|[m 
+[32m|[m     Updates
+[32m|[m 
+* [33mcommit fb78b193262216f2b005a24a3a675362835ca6c1[m
+[32m|[m Author: ajayarora1 <arora.ajay90@gmail.com>
+[32m|[m Date:   Sat Apr 12 15:19:23 2025 -0600
+[32m|[m 
+[32m|[m     Updates
+[32m|[m 
+* [33mcommit 0b2bf10600b155b38476c5bcbafe089aed4811e9[m
+[32m|[m Author: ajayarora1 <arora.ajay90@gmail.com>
+[32m|[m Date:   Fri Apr 11 09:14:42 2025 -0600
+[32m|[m 
+[32m|[m     Updates
+[32m|[m 
+* [33mcommit 103f801f204e41bf510a84390f0364340147c109[m
+[32m|[m Author: AjayArora1 <arora.ajay90@gmail.com>
+[32m|[m Date:   Mon Dec 23 20:29:00 2024 -0700
+[32m|[m 
+[32m|[m     Updates
+[32m|[m 
+* [33mcommit a6efa4043bbf14a8a7b18a5e560b35fffdf4d0a6[m
+[32m|[m Author: AjayArora1 <arora.ajay90@gmail.com>
+[32m|[m Date:   Mon Dec 23 20:26:58 2024 -0700
+[32m|[m 
+[32m|[m     Updates
+[32m|[m 
+* [33mcommit ba690c70171e71773477124fc067c6137ecd0882[m
+[32m|[m Author: AjayArora1 <arora.ajay90@gmail.com>
+[32m|[m Date:   Mon Dec 23 19:59:47 2024 -0700
+[32m|[m 
+[32m|[m     Updates
+[32m|[m 
+* [33mcommit 780826ef7f56861a759e0737d6388d6b19081253[m
+[32m|[m Author: AjayArora1 <arora.ajay90@gmail.com>
+[32m|[m Date:   Tue Aug 20 07:56:41 2024 -0600
+[32m|[m 
+[32m|[m     Updates
+[32m|[m 
+* [33mcommit 6a23bf8effdb3428e7484921cbcce2fb031622a1[m
+[32m|[m Author: AjayArora1 <arora.ajay90@gmail.com>
+[32m|[m Date:   Sun Jul 14 14:51:40 2024 -0600
+[32m|[m 
+[32m|[m     Updates
+[32m|[m 
+* [33mcommit 8d3e927c9b8148fe4fdb504af99e05286feca773[m
+[32m|[m Author: AjayArora1 <arora.ajay90@gmail.com>
+[32m|[m Date:   Sat Jul 13 11:55:34 2024 -0600
+[32m|[m 
+[32m|[m     Updates
+[32m|[m 
+* [33mcommit 83c959aa1c32fb0dcafefc20001a1552917ce316[m
+  Author: AjayArora1 <arora.ajay90@gmail.com>
+  Date:   Fri Jun 28 09:15:52 2024 -0600
+  
+      Deploy portfolio app to GitHub Pages
+    
+*   [33mcommit c15047c46c8b03408895eb2d7b618b4e7cc17e1c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mrecover-v3[m[33m, [m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+[33m|[m[34m\[m  Merge: d47e71a 22a847f
+[33m|[m [34m|[m Author: Ajay Arora <83846945+AjayArora1@users.noreply.github.com>
+[33m|[m [34m|[m Date:   Thu Aug 6 11:18:08 2026 -0600
+[33m|[m [34m|[m 
+[33m|[m [34m|[m     Merge pull request #1 from AjayArora1/add-redirect-pages-v2
+[33m|[m [34m|[m     
+[33m|[m [34m|[m     Add vanity redirect pages
+[33m|[m [34m|[m 
+[33m|[m * [33mcommit 22a847f5ca5652f11809de8f07b78c78bfea5723[m[33m ([m[1;31morigin/add-redirect-pages-v2[m[33m, [m[1;32madd-redirect-pages-v2[m[33m)[m
+[33m|[m[33m/[m  Author: RossDog Studios <Arora.ajay90@gmail.com>
+[33m|[m   Date:   Thu Aug 6 11:17:31 2026 -0600
+[33m|[m   
+[33m|[m       Add vanity redirect pages
+[33m|[m 
+* [33mcommit d47e71a2fb9ec314adca9d8883beb91c7e414c7b[m
+[34m|[m Author: Ajay Arora <83846945+AjayArora1@users.noreply.github.com>
+[34m|[m Date:   Sat Apr 12 15:21:02 2025 -0600
+[34m|[m 
+[34m|[m     2.0.1 Minor style additions and fixes.
+[34m|[m 
+* [33mcommit b6416a03bf0ba617eb4e607d4e17be1c3c461669[m
+[34m|[m Author: Ajay Arora <83846945+AjayArora1@users.noreply.github.com>
+[34m|[m Date:   Fri Apr 11 09:15:54 2025 -0600
+[34m|[m 
+[34m|[m     2.0.0 In Progress
+[34m|[m 
+* [33mcommit d692489908b951571bc388c737231df15e52499c[m
+[34m|[m Author: Ajay Arora <83846945+AjayArora1@users.noreply.github.com>
+[34m|[m Date:   Sun Jul 14 15:30:58 2024 -0600
+[34m|[m 
+[34m|[m     1.1.0
+[34m|[m     
+[34m|[m     Added mobile support, new profile picture, images.
+[34m|[m 
+* [33mcommit 036189b4e04f75cb6161020f4c5d3501fde7452d[m
+[34m|[m Author: Ajay Arora <83846945+AjayArora1@users.noreply.github.com>
+[34m|[m Date:   Sun Jul 14 15:29:52 2024 -0600
+[34m|[m 
+[34m|[m     1.1.0
+[34m|[m     
+[34m|[m     Added mobile support, new profile picture, images.
+[34m|[m 
+* [33mcommit c7d28ac301fdec641f4857feafbb7fec65471c99[m
+[34m|[m Author: Ajay Arora <83846945+AjayArora1@users.noreply.github.com>
+[34m|[m Date:   Sun Jul 14 15:28:10 2024 -0600
+[34m|[m 
+[34m|[m     1.1.0
+[34m|[m     
+[34m|[m     Added mobile support, changed profile picture. Added title and images.
+[34m|[m 
+* [33mcommit 66960ccfaaade8ea0ecb63ded3d2f15a52ec6286[m
+[34m|[m Author: AjayArora1 <arora.ajay90@gmail.com>
+[34m|[m Date:   Fri Jun 28 08:54:48 2024 -0600
+[34m|[m 
+[34m|[m     New Portfolio
+[34m|[m 
+* [33mcommit d2addcadf150a95f2afbb5b4b0b2e14a9f657b18[m
+  Author: AjayArora1 <arora.ajay90@gmail.com>
+  Date:   Fri Jun 21 18:33:36 2024 -0600
+  
+      Initialize project using Create React App
+  
+* [33mcommit 0ba2fcd1cc864e9af88c61be17635fdedaa9d862[m[33m ([m[1;31morigin/add-redirect-pages[m[33m, [m[1;32madd-redirect-pages[m[33m)[m
+  Author: RossDog Studios <Arora.ajay90@gmail.com>
+  Date:   Thu Aug 6 11:10:13 2026 -0600
+  
+      Add vanity redirect pages
