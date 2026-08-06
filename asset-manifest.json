@@ -1,20 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.179a1ed3.css",
-    "main.js": "/static/js/main.e8b58c42.js",
-    "static/media/Ajay Arora Resume.pdf": "/static/media/Ajay Arora Resume.7d36457c125ccf3d3992.pdf",
-    "static/media/ip.png": "/static/media/ip.4347063f9f513192b525.png",
+    "main.css": "/static/css/main.d5c65714.css",
+    "main.js": "/static/js/main.8af559eb.js",
+    "static/media/cms.png": "/static/media/cms.4f2fa571bdc00b302b1d.png",
+    "static/media/bp.png": "/static/media/bp.e547a80b3ff3977ac65a.png",
+    "static/media/ccs.png": "/static/media/ccs.0987a0c4731aa417e11a.png",
     "static/media/sr.png": "/static/media/sr.c244d097685d8f294a46.png",
-    "static/media/trulogo.png": "/static/media/trulogo.15bc7988392bec258bff.png",
-    "static/media/cms.png": "/static/media/cms.e6be6d35c482dd7ecf73.png",
-    "static/media/cmslogo.png": "/static/media/cmslogo.e6be6d35c482dd7ecf73.png",
-    "static/media/ccs.png": "/static/media/ccs.9680987dcaea5472df6c.png",
+    "static/media/ip.png": "/static/media/ip.83b0651b156c8a2c96fb.png",
     "index.html": "/index.html",
-    "main.179a1ed3.css.map": "/static/css/main.179a1ed3.css.map",
-    "main.e8b58c42.js.map": "/static/js/main.e8b58c42.js.map"
+    "main.d5c65714.css.map": "/static/css/main.d5c65714.css.map",
+    "main.8af559eb.js.map": "/static/js/main.8af559eb.js.map"
   },
   "entrypoints": [
-    "static/css/main.179a1ed3.css",
-    "static/js/main.e8b58c42.js"
+    "static/css/main.d5c65714.css",
+    "static/js/main.8af559eb.js"
   ]
 }
